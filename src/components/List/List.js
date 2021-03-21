@@ -7,7 +7,6 @@ import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator'
 
-
 class List extends React.Component {
   state = {
     columns: this.props.columns || [],
@@ -16,11 +15,8 @@ class List extends React.Component {
     title: PropTypes.node.isRequired,
     description: PropTypes.node,
     columns: PropTypes.array,
-    source: PropTypes.string.isRequired,
   }
-  // static defaultProps = {
-  //   description: settings.defaultListDescription,
-  // }
+
   addColumn(title) {
     this.setState(state => (
       {

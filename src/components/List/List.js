@@ -15,6 +15,10 @@ class List extends React.Component {
     title: PropTypes.node.isRequired,
     description: PropTypes.node,
     columns: PropTypes.array,
+
+  }
+  static defaultProps = {
+    description: settings.defaultListDescription,
   }
 
   addColumn(title) {

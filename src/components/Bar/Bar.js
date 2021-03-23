@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './Bar.scss';
 import { slide as Menu } from 'react-burger-menu';
+import Navbar from "../Navbar/Navbar";
 
 
 class Bar extends React.Component {
@@ -27,7 +28,7 @@ class Bar extends React.Component {
         width: '24px'
       },
       bmCross: {
-        background: '#a90000'
+        background: '#999999'
       },
       bmMenuWrap: {
         position: 'fixed',
@@ -47,20 +48,18 @@ class Bar extends React.Component {
       },
       bmItem: {
         display: 'inline-block',
-    },
+      },
       bmOverlay: {
         background: 'rgba(0, 0, 0, 0.3)'
       }
-  }
+    }
 
-  return(
+    return (
 
-      <Menu styles = { styles } >
-      <div className={styles.navs}>
-        <a className="menu-item" href="#">Books</a>
-        <a className="menu-item" href="#">Movies</a>
-        <a className="menu-item" href="#">Games</a>
-      </div>
+      <Menu styles={styles} >
+        <div className={styles.navs}>
+          <Navbar />
+        </div>
       </Menu>
 
     );

@@ -1,13 +1,18 @@
 import React from 'react';
 import styles from './App.scss';
+import PropTypes from 'prop-types';
 import List from '../List/List';
-import { pageContents, listData, settings } from '../../data/dataStore'
+import { pageContents, listData, settings } from '../../data/dataStore';
 import Creator from '../Creator/Creator';
 import Bar from '../Bar/Bar';
 
 class App extends React.Component {
   state = {
     lists: this.props.lists || [],
+  }
+
+  static propTypes = {
+    lists: PropTypes.string,
   }
 
   addList(title) {
@@ -20,8 +25,8 @@ class App extends React.Component {
             title,
             description: 'Interesting things I want to check out!',
             image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
-          }
-        ]
+          },
+        ],
       }
     ));
   }
@@ -44,7 +49,7 @@ class App extends React.Component {
         </div>
 
       </main>
-    )
+    );
   }
 }
 

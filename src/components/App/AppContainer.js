@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
 import App from './App';
-import {createActionAddList, getListsForApp} from '../../redux/listsRedux';
+import {createActionAddList} from '../../redux/listsRedux';
 
 
-const mapStateToProps = (state, props)=> ({
-  lists: getListsForApp(state, props.id),
+const mapStateToProps = state=> ({
+  // lists: getListsForApp,
   // title: state.app.title,
   // subtitle: state.app.subtitle,
-  // lists: state.lists,
+  lists: state.lists,
+
 });
 
-const mapDispatchToProps = (dispatch, props) => ({
-  addColumn: title => dispatch(createActionAddList({
-    AppId: props.id,
+const mapDispatchToProps = (dispatch) => ({
+  addList: title => dispatch(createActionAddList({
+    // App: props.title,
     title,
   })),
 });

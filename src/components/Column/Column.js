@@ -13,7 +13,6 @@ class Column extends React.Component {
     title: PropTypes.string.isRequired,
     cards: PropTypes.array,
     icon: PropTypes.string,
-    image: PropTypes.string,
     addCard: PropTypes.func,
   }
   static defaultProps = {

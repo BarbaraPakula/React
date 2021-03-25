@@ -1,8 +1,5 @@
 import shortid from 'shortid';
 
-// selectors
-export const getListssForApp = ({lists}, appId) => lists.filter(list => list.appId == appId);
-
 // action name creator
 const reducerName = 'lists';
 const createActionName = name => `app/${reducerName}/${name}`;

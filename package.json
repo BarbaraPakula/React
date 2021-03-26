@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "10.23.0"
+  },
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "lint": "eslint src/",
@@ -20,6 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "http-server": "^0.12.3",
     "prop-types": "^15.7.2",
     "react": "^16.7.0",
     "react-burger-menu": "^2.9.2",

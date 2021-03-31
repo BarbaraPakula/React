@@ -7,39 +7,33 @@ import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator';
 
-class List extends React.Component {
+const List = props => (
 
-  static propTypes = {
-    title: PropTypes.node.isRequired,
-    description: PropTypes.node,
-    columns: PropTypes.array,
-    image: PropTypes.string,
-    addColumn: PropTypes.func,
-  }
+  <section className={styles.component}>
+    <Hero title={props.title} image={props.image} />
+    <div className={styles.description}>
+      {ReactHtmlParser(props.description)}
+    </div>
+    <div className={styles.columns}>
+      {props.columns.map(columnData => (
+        <Column key={columnData.id} {...columnData} />
+      ))}
+    </div>
+    <div className={styles.creator}>
+      <Creator text={settings.columnCreatorText} action={props.addColumn} />
+    </div>
+  </section>
+);
+List.propTypes = {
+  title: PropTypes.node.isRequired,
+  description: PropTypes.node,
+  columns: PropTypes.array,
+  image: PropTypes.string,
+  addColumn: PropTypes.func,
+};
 
-  static defaultProps = {
-    description: settings.defaultListDescription,
-  }
-
-  render() {
-    const { title, image, description, columns, addColumn } = this.props;
-    return (
-      <section className={styles.component}>
-        <Hero titleText={title} imageT={image} />
-        <div className={styles.description}>
-          {ReactHtmlParser(description)}
-        </div>
-        <div className={styles.columns}>
-          {columns.map(columnData => (
-            <Column key={columnData.id} {...columnData} />
-          ))}
-        </div>
-        <div className={styles.creator}>
-          <Creator text={settings.columnCreatorText} action={addColumn} />
-        </div>
-      </section>
-    );
-  }
-}
+List.defaultProps = {
+  description: settings.defaultListDescription,
+};
 
 export default List;

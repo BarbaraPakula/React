@@ -6,23 +6,26 @@ import Column from '../Column/ColumnContainer';
 import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator';
+import Container from '../Container/Container';
 
 const List = props => (
+  <Container>
 
-  <section className={styles.component}>
-    <Hero title={props.title} image={props.image} />
-    <div className={styles.description}>
-      {ReactHtmlParser(props.description)}
-    </div>
-    <div className={styles.columns}>
-      {props.columns.map(columnData => (
-        <Column key={columnData.id} {...columnData} />
-      ))}
-    </div>
-    <div className={styles.creator}>
-      <Creator text={settings.columnCreatorText} action={props.addColumn} />
-    </div>
-  </section>
+    <section className={styles.component}>
+      <Hero title={props.title} image={props.image} />
+      <div className={styles.description}>
+        {ReactHtmlParser(props.description)}
+      </div>
+      <div className={styles.columns}>
+        {props.columns.map(columnData => (
+          <Column key={columnData.id} {...columnData} />
+        ))}
+      </div>
+      <div className={styles.creator}>
+        <Creator text={settings.columnCreatorText} action={props.addColumn} />
+      </div>
+    </section>
+  </Container>
 );
 List.propTypes = {
   title: PropTypes.node.isRequired,

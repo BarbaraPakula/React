@@ -5,9 +5,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const baseConfig = () => ({
   entry: './src/index.js',
+
   output: {
+    publicPath: '/',
     path: path.join(__dirname, 'dist'),
     filename: 'scripts_bundle.js',
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -19,7 +24,7 @@ const baseConfig = () => ({
         },
       },
     ],
-  }, 
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',

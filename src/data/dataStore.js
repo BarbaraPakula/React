@@ -13,6 +13,19 @@ export const settings = {
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
+  icon: 'cat',
+};
+
+export const Infocontents = {
+  title: 'Some information about us',
+  description: 'About us some info ect. Lorem Lorem Lorem',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+};
+
+export const FAQcontents = {
+  title: 'Something about FAQ',
+  description: 'Something about FAQ Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
 };
 
 export const pageContents = {

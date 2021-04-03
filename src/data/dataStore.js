@@ -93,6 +93,26 @@ const lists = [
     description: 'Interesting things I want to check out!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
+
+  {
+    id: 'list-3',
+    title: 'Things to do <sup>soon!</sup>',
+    description: 'Interesting things I want to check out!',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
+
+  {
+    id: 'list-4',
+    title: 'Things to do <sup>soon!</sup>',
+    description: 'Interesting things I want to check out!',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
+  {
+    id: 'list-2',
+    title: 'Things to do <sup>soon!</sup>',
+    description: 'Interesting things I want to check out!',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
 ];
 
 const columns = [
@@ -156,7 +176,7 @@ const cards = [
 ];
 
 const initialStoreData = {
-  app: {...pageContents},
+  app: { ...pageContents },
   lists: [...lists],
   columns: [...columns],
   cards: [...cards],

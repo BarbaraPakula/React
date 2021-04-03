@@ -10,7 +10,6 @@ import Container from '../Container/Container';
 
 const List = props => (
   <Container>
-
     <section className={styles.component}>
       <Hero title={props.title} image={props.image} />
       <div className={styles.description}>
@@ -28,7 +27,7 @@ const List = props => (
   </Container>
 );
 List.propTypes = {
-  title: PropTypes.node.isRequired,
+  title: PropTypes.node,
   description: PropTypes.node,
   columns: PropTypes.array,
   image: PropTypes.string,

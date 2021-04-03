@@ -3,14 +3,15 @@ import { NavLink, Link } from 'react-router-dom';
 import styles from './Header.scss';
 import Container from '../Container/Container';
 import Icon from '../Icon/Icon';
-import {settings} from '../../data/dataStore';
-
+import { settings } from '../../data/dataStore';
+import Search from '../Search/Search';
 export class Header extends React.Component {
 
   render() {
     return (
       <header className={styles.component}>
         <Container>
+          <Search />
           <div className={styles.wrapper}>
             <Link to='/' className={styles.logo}>
               <Icon name={settings.icon} />
